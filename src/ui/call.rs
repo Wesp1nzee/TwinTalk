@@ -1,5 +1,5 @@
 use eframe::egui::{Ui, TextEdit};
-use crate::ui::state::{AppState, UiState, CallEndReason};
+use crate::ui::state::main::{AppState, UiState, CallEndReason};
 
 pub fn draw_call(ui: &mut Ui, state: &mut AppState) {
     if let UiState::OutgoingCall { callee_id } = &state.ui_state {

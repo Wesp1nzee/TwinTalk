@@ -1,4 +1,6 @@
 use rand::Rng;
+use crate::ui::state::settings::Settings; 
+
 
 #[derive(Debug)]
 pub enum CallEndReason {
@@ -28,6 +30,7 @@ pub struct AppState {
     pub user_name: String,
     pub ui_state: UiState,
     pub temp_callee: String,
+    pub settings: Settings,
 }
 
 impl AppState {
@@ -36,7 +39,8 @@ impl AppState {
             user_id: rand::rng().random_range(100_000..=1_000_000),
             ui_state: UiState::Login,
             temp_callee: String::new(),
-            user_name: String::new()
+            user_name: String::new(),
+            settings: Settings::new(),
         }
     }
     pub fn toggle_video(&mut self) {
